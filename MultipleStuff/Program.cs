@@ -7,12 +7,12 @@ namespace MultipleStuff
     {
         static void Main(string[] args)
         {
-            double[] list = {2, 3.5, 4, 7, 34, 50, 75.3};
+            double[] list = {74, 2.5, 3, 25, 2, 50, 73.3};
 
             SuperList.GetMinMax1(list);
-            SuperList.GetMinMax1(list);
-            SuperList.GetMinMax1(list);
-            SuperList.GetMinMax1(list);
+            SuperList.GetMinMax2(list);
+            SuperList.GetMinMax3(list);
+            SuperList.GetMinMax4(list);
         }
     }
 }
