@@ -9,7 +9,7 @@ namespace MultipleStuff
 {
     public class SuperList : List<double>
     {
-        private double GetMin(this)
+        private double GetMin()
         {
             double min = this[0];
             foreach(double n in this)
@@ -21,7 +21,7 @@ namespace MultipleStuff
             }
             return min;
         }
-        private double GetMax(this)
+        private double GetMax()
         {
             double max = this[0];
             foreach(double n in this)
@@ -33,21 +33,33 @@ namespace MultipleStuff
             }
             return max;
         }
-        private (out double, out double) GetMinMax1()
+        public struct MinMaxStruct
         {
+            public double Min {get; }
+            public double Max {get; }
 
+            public MinMaxStruct(double min, double max)
+            {
+                Min = min;
+                Max = max;
+            }
         }
-        private (double, double) GetMinMax2()
+        public void GetMinMax1(out double min, out double max)
         {
-
+            min = GetMin();
+            max = GetMax();
         }
-        private (ref double, ref double) GetMinMax3()
+        public MinMaxStruct GetMinMax2()
         {
-
+            return new MinMaxStruct(GetMin(), GetMax());
         }
-        private (double min, double max) GetMinMax4()
+        public (double, double) GetMinMax3()
         {
-
+            return (GetMin(), GetMax());
+        }
+        public (double min, double max) GetMinMax4()
+        {
+            return (GetMin(), GetMax());
         }
     }
 }
